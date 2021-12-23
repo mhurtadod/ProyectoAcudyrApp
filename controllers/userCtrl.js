@@ -5,8 +5,9 @@ const jwt = require("jsonwebtoken");
 const userCtrl = {
   //Se encarga de evaluar y subir el registro al servidor
   register: async (req, res) => {
+    debugger;
     try {
-      const { name, email, password } = req.body;
+      const { name, email, password, vaccines } = req.body;
 
       if (!name || !email || !password)
         return res
@@ -30,6 +31,7 @@ const userCtrl = {
         name,
         email,
         password: passwordHash,
+        vaccines
       });
 
       await newUser.save();

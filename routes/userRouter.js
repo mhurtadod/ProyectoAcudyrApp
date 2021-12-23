@@ -15,9 +15,4 @@ router.get('/logout', userCtrl.logout)
 
 router.post('/refresh_token', userCtrl.getAccessToken)
 
-//VaccineController
-router.get('/vaccines', vaccineCtrl.getVaccineInfor)
-
-router.post('/vaccines', userCtrl.register)
-
 module.exports = router
